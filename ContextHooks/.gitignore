@@ -12,6 +12,5 @@ package-lock.json
 artifacts.tgz
 
 # TypeScript dist
-/src/**/*.js
 !/src/module.js
 /achievementsStrings/index.js
