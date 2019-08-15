@@ -1,13 +1,11 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import Home from "./screens/Home";
-import {useAppHook} from "./hooks/useAppHook";
-
+import {useAppHook} from './hooks/useAppHook';
 export const NbaContext = React.createContext();
 const App = (props) => {
-  const {state, dispatch} = useAppHook();
-
+  const {state, contextData} = useAppHook();
   return (
-    <NbaContext.Provider value={{componentId: props.componentId, dispatch}}>
+    <NbaContext.Provider value={contextData}>
       <Home state={state}/>
     </NbaContext.Provider>
   )
