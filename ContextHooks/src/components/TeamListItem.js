@@ -10,8 +10,16 @@ export default class TeamListItem extends React.Component{
     super();
   }
 
+  lastCounterValue = 0;
+
   componentDidMount() {
-    this.unsubscribe = store.subscribe(() => this.forceUpdate());
+    this.unsubscribe = store.subscribe(() => {
+      const newVal = getTeamCounter(this.props.nbaTeamData.teamName);
+      if(this.lastCounterValue !== newVal){
+        this.forceUpdate();
+        this.lastCounterValue = newVal;
+      }
+    });
   }
 
   componentWillUnmount() {
@@ -44,7 +52,7 @@ export default class TeamListItem extends React.Component{
         </View>
         <View flex center>
           <Text style={styles.text}>
-            {`league points: ${getTeamCounter(this.props.nbaTeamData.teamName)}`}
+            {`league points: ${getTeamCounter(nbaTeamData.teamName)}`}
           </Text>
         </View>
       </Card>
