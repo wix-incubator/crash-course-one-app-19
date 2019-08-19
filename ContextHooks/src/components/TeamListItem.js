@@ -2,6 +2,7 @@ import React from 'react'
 import {StyleSheet} from 'react-native'
 import {Text, Card, View, Image, Colors, TouchableOpacity} from 'react-native-ui-lib'
 import {showModal} from "../services/Navigation";
+import store, {getTeamCounter} from "../store/AppStore";
 
 export default class TeamListItem extends React.Component{
 
@@ -9,7 +10,15 @@ export default class TeamListItem extends React.Component{
     super();
   }
 
-  openCounterScreen = () => showModal('counterScreen', `league points of ${this.props.nbaTeamData.teamName}`);
+  componentDidMount() {
+    this.unsubscribe = store.subscribe(() => this.forceUpdate());
+  }
+
+  componentWillUnmount() {
+    this.unsubscribe();
+  }
+
+  openCounterScreen = () => showModal('counterScreen', `league points of ${this.props.nbaTeamData.teamName}`, {teamName: this.props.nbaTeamData.teamName});
 
   render(){
     const {nbaTeamData} = this.props;
@@ -35,7 +44,7 @@ export default class TeamListItem extends React.Component{
         </View>
         <View flex center>
           <Text style={styles.text}>
-            {`league points: ${'COUNTER'}`}
+            {`league points: ${getTeamCounter(this.props.nbaTeamData.teamName)}`}
           </Text>
         </View>
       </Card>
