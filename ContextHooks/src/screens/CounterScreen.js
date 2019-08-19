@@ -1,10 +1,18 @@
 import React from 'react';
 import {View, Text, Button} from 'react-native-ui-lib'
-
+import store, {getTeamCounter, increment, decrement} from '../store/AppStore'
 
 export class Counter extends React.Component{
   constructor(){
     super();
+  }
+
+  componentDidMount() {
+    this.unsubscribe = store.subscribe(() => this.forceUpdate());
+  }
+
+  componentWillUnmount() {
+    this.unsubscribe();
   }
 
   render(){
@@ -12,14 +20,14 @@ export class Counter extends React.Component{
       <View>
         <Button
           label={'increment'}
-          onPress={() => console.warn('increment')}
+          onPress={() => increment(this.props.teamName)}
         />
         <Text center>
-          {'COUNTER'}
+          {getTeamCounter(this.props.teamName)}
         </Text>
         <Button
           label={'decrement'}
-          onPress={() => console.warn('decrement')}
+          onPress={() => decrement(this.props.teamName)}
         />
       </View>
     )

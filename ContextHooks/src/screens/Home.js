@@ -22,8 +22,10 @@ export default class Home extends React.Component {
   }
 
   componentDidMount(){
-    requestNbaTeamArr().then(() => this.setState({dataWasLoaded: true}))
+    requestNbaTeamArr().then(() => this.setState({dataWasLoaded: true}));
   }
+
+
 
   render(){
     return (
