@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, Button} from 'react-native-ui-lib'
 import store, {getTeamCounter, increment, decrement} from '../store/AppStore'
+import {useCounterScreen} from "../hooks/useCounterScreen";
 
 export class Counter extends React.Component{
 
@@ -44,3 +45,34 @@ export class Counter extends React.Component{
     )
   }
 };
+
+// export const Counter = (props) => {
+//   const {increase, teamCounter, decrease} = useCounterScreen(props);
+//
+//   return (
+//     <View>
+//       <Button
+//         label={'increment'}
+//         onPress={increase}
+//       />
+//       <Text center>
+//         {teamCounter}
+//       </Text>
+//       <Button
+//         label={'decrement'}
+//         onPress={decrease}
+//       />
+//     </View>
+//   )
+// }
+//
+// Counter.options = (passProps) => {
+//   return {
+//     topBar: {
+//       visible: true,
+//       title: {
+//         text: `league points of ${passProps.teamName}`
+//       }
+//     }
+//   }
+// }

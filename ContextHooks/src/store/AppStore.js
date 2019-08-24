@@ -4,6 +4,12 @@ const initialState = {
   counterByTeams: {}
 };
 
+// export const initialState = {
+//   nbaTeamsArray: [],
+//   counterByTeams: {},
+//   dataWasLoaded: false
+// };
+
 function rootReducer(state = initialState, action) {
   const teamName = action.payload.teamName;
   const oldValue = state.counterByTeams[teamName] || 0;
@@ -16,6 +22,21 @@ function rootReducer(state = initialState, action) {
       return state;
   }
 }
+
+// export function rootReducer(state = initialState, action) {
+//   const teamName = action.payload.teamName;
+//   const oldValue = state.counterByTeams[teamName] || 0;
+//   switch(action.type) {
+//     case 'INCREMENT':
+//       return Object.assign({}, state, {counterByTeams: {...state.counterByTeams, [teamName]: oldValue + 1}});
+//     case 'DECREMENT':
+//       return Object.assign({}, state, {counterByTeams: {...state.counterByTeams, [teamName]: oldValue - 1}});
+//     case 'NBA_TEAMS':
+//       return {...state, ...action.payload};
+//     default:
+//       return state;
+//   }
+// }
 
 const store = createStore(rootReducer);
 

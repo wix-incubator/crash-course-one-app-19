@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {StyleSheet} from 'react-native'
 import {Text, Card, View, Image, Colors, TouchableOpacity} from 'react-native-ui-lib'
 import {openScreen} from "../services/Navigation";
 import store, {getTeamCounter} from "../store/AppStore";
 import {NbaContext} from '../contexts'
+import {useTeamListItem} from '../hooks/useTeamListItem';
 
 export default class TeamListItem extends React.Component{
 
@@ -65,6 +66,41 @@ export default class TeamListItem extends React.Component{
     )
   }
 };
+
+// const TeamListItem = ({nbaTeamData}) => {
+//   const context = useContext(NbaContext);
+//   const {openCounterScreen} = useTeamListItem(context.componentId, nbaTeamData);
+//
+//   return (
+//     <Card
+//       key={nbaTeamData.teamId}
+//       style={styles.container}
+//       elevation={4}
+//       onPress={openCounterScreen}
+//       shadow>
+//       <View style={styles.imageContainer}>
+//         <View>
+//           <Image
+//             style={styles.image}
+//             source={{uri: nbaTeamData.teamLogo}}/>
+//         </View>
+//         <View style={styles.border}/>
+//       </View>
+//       <View flex center>
+//         <Text style={styles.text}>
+//           {nbaTeamData.teamName}
+//         </Text>
+//       </View>
+//       <View flex center>
+//         <Text style={styles.text}>
+//           {`league points: ${getTeamCounter(nbaTeamData.teamName)}`}
+//         </Text>
+//       </View>
+//     </Card>
+//   )
+// };
+//
+// export default React.memo(TeamListItem, ({nbaTeamData : prev}, {nbaTeamData: next}) => prev.teamId === next.teamId)
 
 const styles = StyleSheet.create({
   container: {

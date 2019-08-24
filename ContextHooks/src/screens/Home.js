@@ -4,6 +4,7 @@ import TeamListItem from "../components/TeamListItem";
 import {requestNbaTeamArr} from "../store/nba/NbaActions"
 import {NbaStore} from "../store/nba/NbaStore"
 import {NbaContext} from '../contexts'
+import {useHomeHook} from "../hooks/useHomeHook";
 
 export default class Home extends React.Component {
 
@@ -26,8 +27,6 @@ export default class Home extends React.Component {
     requestNbaTeamArr().then(() => this.setState({dataWasLoaded: true}));
   }
 
-
-
   render(){
     return (
       <NbaContext.Provider value={{componentId: this.props.componentId}}>
@@ -44,6 +43,33 @@ export default class Home extends React.Component {
     )
   }
 }
+
+// const keyExtractor = (item) => item.teamId;
+//
+// const renderItem = ({item}) => {
+//   return (
+//     <TeamListItem nbaTeamData={item}/>
+//   )
+// };
+//
+// const Home = (props) => {
+//   const {state, contextData} = useHomeHook(props);
+//   return (
+//     <NbaContext.Provider value={contextData}>
+//       <View style={style.container}>
+//         <FlatList
+//           showsVerticalScrollIndicator={false}
+//           numColumns={2}
+//           data={state.nbaTeamsArray}
+//           keyExtractor={keyExtractor}
+//           renderItem={renderItem}
+//         />
+//       </View>
+//     </NbaContext.Provider>
+//   )
+// };
+//
+// export default Home
 
 const style = StyleSheet.create({
   container: {
