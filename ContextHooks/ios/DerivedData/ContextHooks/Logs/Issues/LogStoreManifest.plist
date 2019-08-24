@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>9</integer>
+	<key>logs</key>
+	<dict>
+		<key>20DA7CF5-DEE4-4869-B008-E0BD6A3E76D3</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
+			<key>fileName</key>
+			<string>20DA7CF5-DEE4-4869-B008-E0BD6A3E76D3.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>signature</key>
+			<string>ContextHooks-cmpjykmysygeyqbjxvxfrkirjxlm</string>
+			<key>timeStartedRecording</key>
+			<real>587247902.14806497</real>
+			<key>timeStoppedRecording</key>
+			<real>587247902.29237294</real>
+			<key>title</key>
+			<string>Build target ContextHooks</string>
+			<key>uniqueIdentifier</key>
+			<string>20DA7CF5-DEE4-4869-B008-E0BD6A3E76D3</string>
+		</dict>
+		<key>7EF231FB-6812-4F19-B28F-6C414B13DA6E</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.target</string>
+			<key>fileName</key>
+			<string>7EF231FB-6812-4F19-B28F-6C414B13DA6E.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>signature</key>
+			<string>ContextHooksTests-cmpjykmysygeyqbjxvxfrkirjxlm</string>
+			<key>timeStartedRecording</key>
+			<real>587246477.60043705</real>
+			<key>timeStoppedRecording</key>
+			<real>587246477.78227603</real>
+			<key>title</key>
+			<string>Analyze target ContextHooksTests</string>
+			<key>uniqueIdentifier</key>
+			<string>7EF231FB-6812-4F19-B28F-6C414B13DA6E</string>
+		</dict>
+	</dict>
+	<key>preserveOldLogs</key>
+	<true/>
+</dict>
+</plist>
