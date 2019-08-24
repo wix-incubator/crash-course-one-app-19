@@ -1,39 +1,63 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import {StyleSheet} from 'react-native'
-import {Text, Card, View, Image, Colors} from 'react-native-ui-lib'
-import {countRender} from "../RenderCounter";
-import {openScreen} from "../services/Navigation";
-import {NbaContext} from "../App";
+import {Text, Card, View, Image, Colors, TouchableOpacity} from 'react-native-ui-lib'
+import {showModal} from "../services/Navigation";
+import store, {getTeamCounter} from "../store/AppStore";
 
-const TeamListItem = ({nbaTeamData}) => {
-  countRender.increase();
-  const context = useContext(NbaContext);
-  // console.log('ttt context', nbaTeamData);
-  // const onPress = () => {
-    // console.log('ttt context.componentId', context.componentId);
-    // openScreen(context.componentId, 'navigation.playground.PlayersScreen', 'title');
-  // };
-  return (
-    <Card
-      key={nbaTeamData.teamId}
-      style={styles.container}
-      elevation={4}
-      shadow>
-      <View style={styles.imageContainer}>
-        <View>
-          <Image
-            style={styles.image}
-            source={{uri: nbaTeamData.teamLogo}}/>
+export default class TeamListItem extends React.Component{
+
+  constructor(){
+    super();
+  }
+
+  lastCounterValue = 0;
+
+  componentDidMount() {
+    this.unsubscribe = store.subscribe(() => {
+      const newVal = getTeamCounter(this.props.nbaTeamData.teamName);
+      if(this.lastCounterValue !== newVal){
+        this.forceUpdate();
+        this.lastCounterValue = newVal;
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    this.unsubscribe();
+  }
+
+  openCounterScreen = () => showModal('counterScreen', `league points of ${this.props.nbaTeamData.teamName}`, {teamName: this.props.nbaTeamData.teamName});
+
+  render(){
+    const {nbaTeamData} = this.props;
+    return (
+      <Card
+        key={nbaTeamData.teamId}
+        style={styles.container}
+        elevation={4}
+        onPress={this.openCounterScreen}
+        shadow>
+        <View style={styles.imageContainer}>
+          <View>
+            <Image
+              style={styles.image}
+              source={{uri: nbaTeamData.teamLogo}}/>
+          </View>
+          <View style={styles.border}/>
         </View>
-        <View style={styles.border}/>
-      </View>
-      <View flex center>
-        <Text style={styles.text}>
-          {nbaTeamData.teamName}
-        </Text>
-      </View>
-    </Card>
-  )
+        <View flex center>
+          <Text style={styles.text}>
+            {nbaTeamData.teamName}
+          </Text>
+        </View>
+        <View flex center>
+          <Text style={styles.text}>
+            {`league points: ${getTeamCounter(nbaTeamData.teamName)}`}
+          </Text>
+        </View>
+      </Card>
+    )
+  }
 };
 
 const styles = StyleSheet.create({
@@ -65,5 +89,3 @@ const styles = StyleSheet.create({
     marginBottom: 8
   }
 });
-
-export default React.memo(TeamListItem, ({nbaTeamData : prev}, {nbaTeamData: next}) => prev.teamId === next.teamId)
