@@ -3,14 +3,7 @@ import {View, FlatList, StyleSheet} from 'react-native'
 import TeamListItem from "../components/TeamListItem";
 import {requestNbaTeamArr} from "../store/nba/NbaActions"
 import {NbaStore} from "../store/nba/NbaStore"
-
-const keyExtractor = (item) => item.teamId;
-
-const renderItem = ({item}) => {
-  return (
-    <TeamListItem nbaTeamData={item}/>
-  )
-};
+import {NbaContext} from '../contexts'
 
 export default class Home extends React.Component {
 
@@ -21,6 +14,14 @@ export default class Home extends React.Component {
     }
   }
 
+  keyExtractor = (item) => item.teamId;
+
+  renderItem = ({item}) => {
+    return (
+      <TeamListItem nbaTeamData={item}/>
+    )
+  };
+
   componentDidMount(){
     requestNbaTeamArr().then(() => this.setState({dataWasLoaded: true}));
   }
@@ -29,15 +30,17 @@ export default class Home extends React.Component {
 
   render(){
     return (
-      <View style={style.container}>
-        <FlatList
-          showsVerticalScrollIndicator={false}
-          numColumns={2}
-          data={NbaStore.nbaTeamsArray}
-          keyExtractor={keyExtractor}
-          renderItem={renderItem}
-        />
-      </View>
+      <NbaContext.Provider value={{componentId: this.props.componentId}}>
+        <View style={style.container}>
+          <FlatList
+            showsVerticalScrollIndicator={false}
+            numColumns={2}
+            data={NbaStore.nbaTeamsArray}
+            keyExtractor={this.keyExtractor}
+            renderItem={this.renderItem}
+          />
+        </View>
+      </NbaContext.Provider>
     )
   }
 }

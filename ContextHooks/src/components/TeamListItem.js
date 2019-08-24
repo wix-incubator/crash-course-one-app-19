@@ -1,8 +1,9 @@
 import React from 'react'
 import {StyleSheet} from 'react-native'
 import {Text, Card, View, Image, Colors, TouchableOpacity} from 'react-native-ui-lib'
-import {showModal} from "../services/Navigation";
+import {openScreen} from "../services/Navigation";
 import store, {getTeamCounter} from "../store/AppStore";
+import {NbaContext} from '../contexts'
 
 export default class TeamListItem extends React.Component{
 
@@ -26,36 +27,41 @@ export default class TeamListItem extends React.Component{
     this.unsubscribe();
   }
 
-  openCounterScreen = () => showModal('counterScreen', `league points of ${this.props.nbaTeamData.teamName}`, {teamName: this.props.nbaTeamData.teamName});
+  openCounterScreen = (componentId) => openScreen(componentId, 'CounterScreen', {teamName: this.props.nbaTeamData.teamName});
+
 
   render(){
     const {nbaTeamData} = this.props;
     return (
-      <Card
-        key={nbaTeamData.teamId}
-        style={styles.container}
-        elevation={4}
-        onPress={this.openCounterScreen}
-        shadow>
-        <View style={styles.imageContainer}>
-          <View>
-            <Image
-              style={styles.image}
-              source={{uri: nbaTeamData.teamLogo}}/>
-          </View>
-          <View style={styles.border}/>
-        </View>
-        <View flex center>
-          <Text style={styles.text}>
-            {nbaTeamData.teamName}
-          </Text>
-        </View>
-        <View flex center>
-          <Text style={styles.text}>
-            {`league points: ${getTeamCounter(nbaTeamData.teamName)}`}
-          </Text>
-        </View>
-      </Card>
+      <NbaContext.Consumer>
+        {value =>
+          <Card
+            key={nbaTeamData.teamId}
+            style={styles.container}
+            elevation={4}
+            onPress={() => this.openCounterScreen(value.componentId)}
+            shadow>
+            <View style={styles.imageContainer}>
+              <View>
+                <Image
+                  style={styles.image}
+                  source={{uri: nbaTeamData.teamLogo}}/>
+              </View>
+              <View style={styles.border}/>
+            </View>
+            <View flex center>
+              <Text style={styles.text}>
+                {nbaTeamData.teamName}
+              </Text>
+            </View>
+            <View flex center>
+              <Text style={styles.text}>
+                {`league points: ${getTeamCounter(nbaTeamData.teamName)}`}
+              </Text>
+            </View>
+          </Card>
+        }
+      </NbaContext.Consumer>
     )
   }
 };
