@@ -3,6 +3,17 @@ import {View, Text, Button} from 'react-native-ui-lib'
 import store, {getTeamCounter, increment, decrement} from '../store/AppStore'
 
 export class Counter extends React.Component{
+
+  static options(passProps) {
+    return {
+      topBar: {
+        title: {
+          text: `league points of ${passProps.teamName}`
+        },
+      }
+    };
+  }
+
   constructor(){
     super();
   }
