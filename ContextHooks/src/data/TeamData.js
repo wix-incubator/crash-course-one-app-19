@@ -10,6 +10,8 @@ class TeamData {
         this.teamDecription = teamJson.strDescriptionEN;
         this.teamBadge = teamJson.strTeamBadge;
         this.teamLogo = teamJson.strTeamLogo;
+        this.counter = 0;
+
     }
 }
 

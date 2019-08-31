@@ -1,8 +1,9 @@
 import {loadNbaTeams} from "../../services/NbaService";
-import {teamsJsonToTeamsArr} from "../../selector/NbaSelector";
-import {NbaStore} from "./NbaStore";
+import {teamsJsonToTeamsMap} from "../../selector/NbaSelector";
+import {initialState} from "../AppStore";
 
-export const requestNbaTeamArr = async () => {
+export const requestNbaTeamArr = async (dispatch) => {
   const nbaTeamRequest = await loadNbaTeams();
-  NbaStore.nbaTeamsArray = await teamsJsonToTeamsArr(nbaTeamRequest);
+  const nbaTeams = await teamsJsonToTeamsMap(nbaTeamRequest);
+  dispatch({type: 'NBA_TEAMS', payload: {nbaTeamsMap: nbaTeams}});
 };

@@ -30,6 +30,7 @@ export default class TeamListItem extends React.Component {
 
   render() {
     const {nbaTeamData} = this.props;
+    const teamCounter = getTeamCounter(nbaTeamData.teamName);
     return (
       <Card
         key={nbaTeamData.teamId}
@@ -52,7 +53,7 @@ export default class TeamListItem extends React.Component {
         </View>
         <View flex center>
           <Text style={styles.text}>
-            {`league points: ${getTeamCounter(nbaTeamData.teamName)}`}
+            {`league points: ${teamCounter}`}
           </Text>
         </View>
       </Card>

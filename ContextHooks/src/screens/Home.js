@@ -2,16 +2,12 @@ import React from 'react';
 import {View, FlatList, StyleSheet} from 'react-native'
 import TeamListItem from "../components/TeamListItem";
 import {requestNbaTeamArr} from "../store/nba/NbaActions"
-import {NbaStore} from "../store/nba/NbaStore"
-import {NbaContext} from '../contexts'
+import store, {getTeamArrFromTeamMap} from '../store/AppStore'
 
 export default class Home extends React.Component {
 
   constructor() {
     super();
-    this.state = {
-      dataWasLoaded: false
-    }
   }
 
   keyExtractor = (item) => item.teamId;
@@ -23,17 +19,18 @@ export default class Home extends React.Component {
   };
 
   componentDidMount() {
-    requestNbaTeamArr().then(() => this.setState({dataWasLoaded: true}));
+    requestNbaTeamArr(store.dispatch);
+    store.subscribe(() => this.forceUpdate())
   }
 
-
   render() {
+    const teamsData = getTeamArrFromTeamMap();
     return (
       <View style={style.container}>
         <FlatList
           showsVerticalScrollIndicator={false}
           numColumns={2}
-          data={NbaStore.nbaTeamsArray}
+          data={teamsData}
           keyExtractor={this.keyExtractor}
           renderItem={this.renderItem}
         />

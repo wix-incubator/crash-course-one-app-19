@@ -1,11 +1,12 @@
 import TeamData from '../data/TeamData'
 import NbaPlayerData from "../data/PlayerData";
 
-export function teamsJsonToTeamsArr(teamsJson) {
-  const teamsData = [];
+export function teamsJsonToTeamsMap(teamsJson) {
+  const teamsData = {};
   if (teamsJson !== undefined && teamsJson.teams !== undefined) {
     teamsJson.teams.forEach((teamJson) => {
-      teamsData.push(new TeamData(teamJson));
+      const teamData = new TeamData(teamJson);
+      teamsData[teamData.teamName] = teamData;
     });
   }
   return teamsData
