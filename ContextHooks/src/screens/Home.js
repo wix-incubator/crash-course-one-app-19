@@ -7,7 +7,7 @@ import {NbaContext} from '../contexts'
 
 export default class Home extends React.Component {
 
-  constructor(){
+  constructor() {
     super();
     this.state = {
       dataWasLoaded: false
@@ -22,25 +22,22 @@ export default class Home extends React.Component {
     )
   };
 
-  componentDidMount(){
+  componentDidMount() {
     requestNbaTeamArr().then(() => this.setState({dataWasLoaded: true}));
   }
 
 
-
-  render(){
+  render() {
     return (
-      <NbaContext.Provider value={{componentId: this.props.componentId}}>
-        <View style={style.container}>
-          <FlatList
-            showsVerticalScrollIndicator={false}
-            numColumns={2}
-            data={NbaStore.nbaTeamsArray}
-            keyExtractor={this.keyExtractor}
-            renderItem={this.renderItem}
-          />
-        </View>
-      </NbaContext.Provider>
+      <View style={style.container}>
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          numColumns={2}
+          data={NbaStore.nbaTeamsArray}
+          keyExtractor={this.keyExtractor}
+          renderItem={this.renderItem}
+        />
+      </View>
     )
   }
 }
