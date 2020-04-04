@@ -1040,9 +1040,9 @@ acorn-walk@^6.0.1:
   integrity sha1-Ejy487hMIXHx9/slJhWxx4prGow=
 
 acorn@^5.5.3:
-  version "5.7.3"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/acorn/-/acorn-5.7.3.tgz#67aa231bf8812974b85235a96771eb6bd07ea279"
-  integrity sha1-Z6ojG/iBKXS4UjWpZ3Hra9B+onk=
+  version "5.7.4"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.7.4.tgz#3e8d8a9947d0599a1796d10225d7432f4a4acf5e"
+  integrity sha512-1D++VG7BhrtvQpNbBzovKNc1FLGGEE/oGe7b9xJm/RFHMBeUaUGpluV9RLjZa47YFdPcDAenEYuq9pQPcMdLJg==
 
 acorn@^6.0.1:
   version "6.2.1"
@@ -4899,10 +4899,10 @@ react-native-interactable@1.0.0:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/react-native-interactable/-/react-native-interactable-1.0.0.tgz#b6dcdff9ec61dfae9233e46e1d673ce8480a4f64"
   integrity sha1-ttzf+exh366SM+RuHWc86EgKT2Q=
 
-react-native-navigation@^3.0.0-alpha.8:
-  version "3.0.0-alpha.7-snapshot.434"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/react-native-navigation/-/react-native-navigation-3.0.0-alpha.7-snapshot.434.tgz#ceef376d41774ebb6d71e84e1e35d6df3e897ced"
-  integrity sha1-zu83bUF3TrttcehOHjXW3z6JfO0=
+react-native-navigation@3.0.0-alpha.11:
+  version "3.0.0-alpha.11"
+  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-3.0.0-alpha.11.tgz#8f3378731ca2a61628eb37caf16c213e052a10f8"
+  integrity sha512-iJoDRJqEIPQo378RKfHVQtfIAW4maJNRuL/rRdjbA2ke7IrpuBEaC/4Dk4OsQPQzDwMekQuTVzrnlXzGbxSDqQ==
   dependencies:
     hoist-non-react-statics "3.x.x"
     lodash "4.17.x"
