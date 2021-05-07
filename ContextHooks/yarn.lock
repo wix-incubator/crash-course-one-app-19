@@ -4899,10 +4899,10 @@ react-native-interactable@1.0.0:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/react-native-interactable/-/react-native-interactable-1.0.0.tgz#b6dcdff9ec61dfae9233e46e1d673ce8480a4f64"
   integrity sha1-ttzf+exh366SM+RuHWc86EgKT2Q=
 
-react-native-navigation@^3.0.0-alpha.8:
-  version "3.0.0-alpha.7-snapshot.434"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/react-native-navigation/-/react-native-navigation-3.0.0-alpha.7-snapshot.434.tgz#ceef376d41774ebb6d71e84e1e35d6df3e897ced"
-  integrity sha1-zu83bUF3TrttcehOHjXW3z6JfO0=
+react-native-navigation@3.0.0-alpha.11:
+  version "3.0.0-alpha.11"
+  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-3.0.0-alpha.11.tgz#8f3378731ca2a61628eb37caf16c213e052a10f8"
+  integrity sha512-iJoDRJqEIPQo378RKfHVQtfIAW4maJNRuL/rRdjbA2ke7IrpuBEaC/4Dk4OsQPQzDwMekQuTVzrnlXzGbxSDqQ==
   dependencies:
     hoist-non-react-statics "3.x.x"
     lodash "4.17.x"
@@ -5893,9 +5893,9 @@ typedarray@^0.0.6:
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
 ua-parser-js@^0.7.18:
-  version "0.7.20"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/ua-parser-js/-/ua-parser-js-0.7.20.tgz#7527178b82f6a62a0f243d1f94fd30e3e3c21098"
-  integrity sha1-dScXi4L2pioPJD0flP0w4+PCEJg=
+  version "0.7.28"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.28.tgz#8ba04e653f35ce210239c64661685bf9121dec31"
+  integrity sha512-6Gurc1n//gjp9eQNXjD9O3M/sMwVtN5S8Lv9bvOYBfKfDNiIIhqiyi01vMBO45u4zkDE420w/e0se7Vs+sIg+g==
 
 uglify-es@^3.1.9:
   version "3.3.9"
