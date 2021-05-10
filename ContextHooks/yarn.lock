@@ -3721,9 +3721,9 @@ lodash.throttle@^4.1.1:
   integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
 
 lodash@4.17.x, lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.5, lodash@^4.3.0, lodash@^4.6.1:
-  version "4.17.15"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha1-tEf2ZwoEVbv+7dETku/zMOoJdUg=
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 log-symbols@^2.2.0:
   version "2.2.0"
@@ -4899,10 +4899,10 @@ react-native-interactable@1.0.0:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/react-native-interactable/-/react-native-interactable-1.0.0.tgz#b6dcdff9ec61dfae9233e46e1d673ce8480a4f64"
   integrity sha1-ttzf+exh366SM+RuHWc86EgKT2Q=
 
-react-native-navigation@^3.0.0-alpha.8:
-  version "3.0.0-alpha.7-snapshot.434"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/react-native-navigation/-/react-native-navigation-3.0.0-alpha.7-snapshot.434.tgz#ceef376d41774ebb6d71e84e1e35d6df3e897ced"
-  integrity sha1-zu83bUF3TrttcehOHjXW3z6JfO0=
+react-native-navigation@3.0.0-alpha.11:
+  version "3.0.0-alpha.11"
+  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-3.0.0-alpha.11.tgz#8f3378731ca2a61628eb37caf16c213e052a10f8"
+  integrity sha512-iJoDRJqEIPQo378RKfHVQtfIAW4maJNRuL/rRdjbA2ke7IrpuBEaC/4Dk4OsQPQzDwMekQuTVzrnlXzGbxSDqQ==
   dependencies:
     hoist-non-react-statics "3.x.x"
     lodash "4.17.x"
