@@ -2727,9 +2727,9 @@ hoist-non-react-statics@^2.3.1:
   integrity sha1-xZA89AnA39kI84jmGdhrnBF0y0c=
 
 hosted-git-info@^2.1.4:
-  version "2.7.1"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/hosted-git-info/-/hosted-git-info-2.7.1.tgz#97f236977bd6e125408930ff6de3eec6281ec047"
-  integrity sha1-l/I2l3vW4SVAiTD/bePuxigewEc=
+  version "2.8.9"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz#dffc0bf9a21c02209090f2aa69429e1414daf3f9"
+  integrity sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==
 
 html-encoding-sniffer@^1.0.2:
   version "1.0.2"
@@ -4899,10 +4899,10 @@ react-native-interactable@1.0.0:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/react-native-interactable/-/react-native-interactable-1.0.0.tgz#b6dcdff9ec61dfae9233e46e1d673ce8480a4f64"
   integrity sha1-ttzf+exh366SM+RuHWc86EgKT2Q=
 
-react-native-navigation@^3.0.0-alpha.8:
-  version "3.0.0-alpha.7-snapshot.434"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/react-native-navigation/-/react-native-navigation-3.0.0-alpha.7-snapshot.434.tgz#ceef376d41774ebb6d71e84e1e35d6df3e897ced"
-  integrity sha1-zu83bUF3TrttcehOHjXW3z6JfO0=
+react-native-navigation@3.0.0-alpha.11:
+  version "3.0.0-alpha.11"
+  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-3.0.0-alpha.11.tgz#8f3378731ca2a61628eb37caf16c213e052a10f8"
+  integrity sha512-iJoDRJqEIPQo378RKfHVQtfIAW4maJNRuL/rRdjbA2ke7IrpuBEaC/4Dk4OsQPQzDwMekQuTVzrnlXzGbxSDqQ==
   dependencies:
     hoist-non-react-statics "3.x.x"
     lodash "4.17.x"
